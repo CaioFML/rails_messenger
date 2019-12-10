@@ -12,7 +12,7 @@
     padding: 0.7em;
 
     a {
-      &:link, &:hover, &:visited, &:acitve {
+      &:link, &:hover, &:visited, &:active {
         text-decoration: none;
         color: $white-ter;
       }
