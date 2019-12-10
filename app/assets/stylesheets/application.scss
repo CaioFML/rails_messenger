@@ -2,3 +2,20 @@
 @import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
 @import "@fortawesome/fontawesome-free/css/solid.min.css";
 @import "bulma-quickview/dist/css/bulma-quickview";
+
+.navbar-burguer.burguer.desktop-burguer {
+  display: block
+}
+
+.sidebar-menu {
+  li {
+    padding: 0.7em;
+
+    a {
+      &:link, &:hover, &:visited, &:acitve {
+        text-decoration: none;
+        color: $write-ter;
+      }
+    }
+  }
+}
