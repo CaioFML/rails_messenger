@@ -1,15 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMessenger</title>
+    <title>OneBitMessenger</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-widthm initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+ 
   <body>
-    <%= yield %>
+    <nav class="navbar has-background-grey-dark has-text-white-ter">
+      <div class="container">
+        <div class="navbar-brand">
+          <div class="navbar-item has-text-white-ter">
+            <%= image_tag "logo.png" %>
+          </div>
+ 
+          <div class="navbar-burger burger has-text-white-ter" data-show="quickview" data-target="left-sidebar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+ 
+        <div class="navbar-burger burger has-text-white-ter desktop-burger is-hidden-touch" data-show="quickview" data-target="left-sidebar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+      <div id="left-sidebar" class="quickview has-background-black-bis">
+        <header class="quickview-header">
+          <p class="title has-text-white-ter">
+            Menu
+          </p>
+          <span class="delete" data-dismiss="quickview"></span>
+        </header>
+ 
+        <div class="quickview-body">
+          <div class="quickview-block">
+            <ul class="sidebar-menu">
+              <li>
+                <%= link_to "" do %>
+                  <i class="fas fa-comment"></i>
+                  Chats
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "" do %>
+                  <i class="fas fa-address-book"></i>
+                  Contacts
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "" do %>
+                  <i class="fas fa-cog"></i>
+                  Settings
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>  
+    </nav>
+ 
+    <section class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
