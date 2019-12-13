@@ -18,6 +18,8 @@
 <% end %>
 
 <div class="message-container">
+  <%= render @messages %>
+
   <footer class="send-message has-background-black">
     <div class="container">
       <%= form_with url: chat_messages_path(@user) do |f| %>
