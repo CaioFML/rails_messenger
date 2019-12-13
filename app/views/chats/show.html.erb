@@ -1,5 +1,5 @@
 <%= content_for :brand do %>
-  <% if @user photo.present? %>
+  <% if @user.photo.present? %>
     <%= image_tag @user.photo %>
   <% else %>
     <i class="fas fa-paw has-text-white-ter"></i>
