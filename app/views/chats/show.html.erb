@@ -1,3 +1,11 @@
+<%= content_for :brand do %>
+  <% if @user photo.present? %>
+    <%= image_tag @user.photo %>
+  <% else %>
+    <i class="fas fa-paw has-text-white-ter"></i>
+  <% end %>
+<% end %>
+
 <%= content_for :title do %>
   <div class="contact-header">
     <div class="name">
