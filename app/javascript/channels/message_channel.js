@@ -6,7 +6,7 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    messageContainer = document.querySelector("div.message-container")
+    let messageContainer = document.querySelector("div.message-container")
     messageContainer.innerHTML += data
     messageContainer.scrollIntoView(false)
   }
