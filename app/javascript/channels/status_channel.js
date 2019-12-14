@@ -1,15 +1,21 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create("StatusChannel", {
-  connected() {
-    // Called when the subscription is ready for use on the server
-  },
+document.addEventListener("turbolinks:load", () => {
+  const contactHeader = document.querySelector("div.contact-header")
 
-  disconnected() {
-    // Called when the subscription has been terminated by the server
-  },
+  if(contactHeader) {
+    consumer.subscriptions.create({ channel: "StatusChannel", user: contactHeader.dataset.user }, {
+      connected() {
+        console.log("Connected at StatusChannel")
+      },
 
-  received(data) {
-    // Called when there's incoming data on the websocket for this channel
+      disconnected() {
+        // Called when the subscription has been terminated by the server
+      },
+
+      received(data) {
+        document.querySelector("div.contact-header div.status").innerHTML = data["status"]
+      }
+    });
   }
 });
