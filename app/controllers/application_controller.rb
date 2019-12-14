@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_devise_params, if: :devise_controller?
 
-  Warden:>:Manager.after_authentication do |user, auth, opts|
+  Warden::Manager.after_authentication do |user, auth, opts|
     user.update(is_online: true)
     StatusUpdaterJob.perform_now(user)
   end
 
-  Warden:>:Manager.before_logout do |user, auth, opts|
+  Warden::Manager.before_logout do |user, auth, opts|
     user.update(is_online: false)
     StatusUpdaterJob.perform_now(user)
   end
