@@ -2,7 +2,7 @@ class MessageSenderJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-    MessageChannel.brodcast_to(message.receiver, render_partial(message))
+    MessageChannel.broadcast_to(message.receiver, render_partial(message))
   end
 
   private
