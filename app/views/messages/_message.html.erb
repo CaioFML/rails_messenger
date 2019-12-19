@@ -1,4 +1,5 @@
-<div class="columns is-mobile is-vcentered is-multiline message <%= message.sender == current_user ? 'sender' : 'receiver' %>">
+<div class="columns is-mobile is-vcentered is-multiline message <%= message.sender == current_user ? 'sender' : 'receiver' %>"
+    data-message=<%= message.id %>>
   <div class="column is-one-fifth-mobile is-1-tablet photo">
     <% if message.sender.photo.present? %>
       <figure class="image is-square is-36x36">
