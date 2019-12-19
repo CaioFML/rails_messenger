@@ -10,7 +10,6 @@ consumer.subscriptions.create("ReadMessageChannel", {
   },
 
   received(data) {
-    console.log(data)
     data['messages'].forEach(message_id => {
       let container = document.querySelector(`div.message[data-message='${message_id}'] .read-icon`)
       container.classList.add(`has-text-success`)
