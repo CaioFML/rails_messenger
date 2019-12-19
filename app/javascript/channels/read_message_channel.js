@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("ReadMessageChannel", {
   connected() {
-    // Called when the subscription is ready for use on the server
+    console.log("Connected at ReadMessage")
   },
 
   disconnected() {
