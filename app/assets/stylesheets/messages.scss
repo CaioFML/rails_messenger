@@ -12,9 +12,12 @@ div.columns.message {
   }
 
   &.sender {
+    padding-bottom: 0;
     flex-direction: row-reverse;
 
     div.column {
+      padding-bottom: 0;
+
       &.content {
         color: $grey-darker;
         background-color: #99FF99;
@@ -23,6 +26,14 @@ div.columns.message {
       &.date {
         text-align: right;
       }
+
+      div.content {
+        span.read-icon {
+          display: block;
+          font-size: 8pt;
+          text-align: right;
+        }
+      }
     }
   }
 
@@ -30,6 +41,10 @@ div.columns.message {
     div.column.content {
       color: $black-ter;
       background-color: $white-ter
+    }
+
+    span.read-icon {
+      display: none;
     }
   }
 }
