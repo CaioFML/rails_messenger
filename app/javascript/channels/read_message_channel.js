@@ -10,6 +10,10 @@ consumer.subscriptions.create("ReadMessageChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    console.log(data)
+    data['messages'].forEach(message_id => {
+      let container = document.querySelector(`div.message[data-message='${message_id}'] .read-icon`)
+      container.classList.add(`has-text-success`)
+    })
   }
 });
